@@ -5,10 +5,8 @@ import { Descriptions, Card, Divider, PageHeader } from 'antd';
 import { useLocation, useHistory } from 'react-router-dom';
 
 import { Dispatch, iRootState } from '../../state/store';
-import { ProfileProps } from '../../state/profile/types';
 import { Cover, Wrapper } from '../../shared/common/styles';
 import RepositoryList from '../repos/RepositoryList';
-import { ProfileState } from '../../state/profile/models';
 
 type Params = {
   slug: string;
@@ -61,6 +59,7 @@ const Profile = () => {
     company,
     followers,
     following,
+    location: profileLocation,
     name,
     public_repos,
     public_gists,
@@ -74,7 +73,7 @@ const Profile = () => {
           {!!avatar_url && (
             <Card
               hoverable
-              style={{ width: 240 }}
+              style={{ width: 240, margin: '10px auto' }}
               cover={<img alt="avatar" src={avatar_url} />}
             >
               <Meta title={name} description={bio} />
@@ -91,7 +90,9 @@ const Profile = () => {
               {public_gists}
             </Descriptions.Item>
             <Descriptions.Item label="Following">{following}</Descriptions.Item>
-            <Descriptions.Item label="Location">{location}</Descriptions.Item>
+            <Descriptions.Item label="Location">
+              {profileLocation}
+            </Descriptions.Item>
             <Descriptions.Item label="Blog">{blog}</Descriptions.Item>
           </Descriptions>
           <Divider orientation="left">Repos</Divider>

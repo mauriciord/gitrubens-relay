@@ -2,7 +2,7 @@
 
 demo: https://gitrubens-graphql.vercel.app/
 
-This project is a Github search explorer using Github v3 REST API to explore users and repositories. It's using some main tools like:
+This project is a Github search explorer using Github GRAPHQL API to explore users and repositories. It's using some main tools like:
 - ReactJS
 - Typescript
 - GraphQL (Relay client)
@@ -15,7 +15,7 @@ This project is a Github search explorer using Github v3 REST API to explore use
 - Testing Library
 
 ### Environment variables
-There is a `.env.example` demonstrating how to configure the REST API URL, so you can copy it and create some files:
+There is a `.env.example` demonstrating how to configure the API URL (Graphql, Github token and Rest API), so you can copy it and create some files:
 - `.env.development.local`
 - `.env.production.local`
 
